@@ -4,7 +4,10 @@ branches:
   - master
   - develop
   - feature/Travis_CI # Delete this for release.
-  
+
 language: cpp
+
+notifications:
+  email: false # https://docs.travis-ci.com/user/notifications/
 
 script: make
