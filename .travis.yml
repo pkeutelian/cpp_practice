@@ -1,0 +1,8 @@
+# safelist
+branches:
+  only:
+  - master
+  - develop
+  - feature/Travis_CI # Delete this for release.
+  
+language: cpp
