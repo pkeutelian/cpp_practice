@@ -1,9 +1,9 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=helloworld.cpp
+SOURCES=helloworld.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=helloworld
+EXECUTABLE=tutorial
 
 all: $(SOURCES) $(EXECUTABLE)
 	
