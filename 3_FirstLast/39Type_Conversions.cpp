@@ -11,7 +11,7 @@ int Type_Conversions()
         int i2 = c;         // get the integer value of the character
         cout << "d==" << d                  // the original double
               << " i==" << i                // converted to int
-              << "i2 ==" << i2              // int value of char
+              << " i2 ==" << i2              // int value of char
               << " char(" << c << ")\n";	// the char
     }
     return 0;
