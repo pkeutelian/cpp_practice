@@ -4,6 +4,7 @@
 int Type_Conversions()
 {
     double d = 0;
+    cout << "Enter a number to see type conversions, enter text to quit. \n > ";
     while (cin>>d) {        // repeat the statements 
                             // as long as we type in numbers
         int i = d;          // try to squeeze a double into an int
