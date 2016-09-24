@@ -1,10 +1,14 @@
 #include <iostream>
 
+// Chapter 2
 int helloworld();
+// Chapter 3
 int Type_Conversions();
 int FirstLast();
 int String_Compare();
 int letter_writing();
+// Chapter 4
+int loops_sorts();
 
 int main() {
 
@@ -17,6 +21,8 @@ int main() {
       << "    3) First-Last \n"
       << "    4) String_Compare\n"
       << "    5) Exercise: Letter Writing\n"
+      << "<< Chapter 4 >>\n"
+      << "    6) Loops and Sorts\n"
       << "Choice then ENTER: > ";
     int choice = -1;
     std::cin >> choice;
@@ -32,6 +38,8 @@ int main() {
         case 4 : String_Compare();
                  break;
         case 5 : letter_writing();
+                 break;
+        case 6 : loops_sorts();
                  break;
         default: std::cout << "Not a valid choice\n";
 
