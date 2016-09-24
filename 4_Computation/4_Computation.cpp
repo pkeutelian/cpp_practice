@@ -25,7 +25,7 @@ void loops_sorts() {
                  << ".\nThe larger value is: " << larger
                  << ".\n";
         }
-        else if (slot1 > slot2){
+        else if (slot1 > slot2) {
             smaller = slot2;
             larger = slot1;
             cout << "The smaller value is: " << smaller
@@ -35,7 +35,10 @@ void loops_sorts() {
         else if (slot1 == slot2)
             cout << "The numbers are equal.\n";
         else
-            cout << "Corner case\n";               
+            cout << "Corner case\n";
+        if (((slot1-slot2) < (1.0/100)) && ((slot1-slot2) > (-1.0/100)))
+            cout << "The numbers are almost equal.\n";
+        else {}  
     
     }
 }
