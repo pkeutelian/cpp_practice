@@ -3,6 +3,9 @@
 // Chapter 4 exercise
 
 #include "std_lib_facilities.h"
+#include <limits>
+#include <cstddef>
+#include <iostream>
 
 
 void loops_sorts() {
@@ -10,35 +13,20 @@ void loops_sorts() {
     cout << "Enter a set of numbers, '|' to end.: ";
 
     double slot1 = 0;
-    double slot2 = 0;
-    double smaller = 0;
-    double larger = 0;
+    double smaller = std::numeric_limits<double>::max();    // Start high enough to trigger.
+    double larger = std::numeric_limits<double>::min();     // Start low enough to trigger.
 
-    while (cin >> slot1 >> slot2) {
+    while (cin >> slot1) {
 
-        cout << "Entered: " << slot1 << " " << slot2 << "\n";
+        cout << "Entered: " << slot1 << ".\n";
 
-        if (slot1 < slot2) {
+        if (slot1 < smaller) {
             smaller = slot1;
-            larger = slot2;
-            cout << "The smaller value is: " << smaller
-                 << ".\nThe larger value is: " << larger
-                 << ".\n";
+            cout << smaller << ", the smallest so far.\n ";
         }
-        else if (slot1 > slot2) {
-            smaller = slot2;
+        else if (slot1 > larger) {
             larger = slot1;
-            cout << "The smaller value is: " << smaller
-                 << ".\nThe larger value is: " << larger
-                 << ".\n";
-        }
-        else if (slot1 == slot2)
-            cout << "The numbers are equal.\n";
-        else
-            cout << "Corner case\n";
-        if (((slot1-slot2) < (1.0/100)) && ((slot1-slot2) > (-1.0/100)))
-            cout << "The numbers are almost equal.\n";
-        else {}  
-    
+            cout << larger << ", the largest so far.\n ";
+        }    
     }
 }
