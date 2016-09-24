@@ -20,16 +20,21 @@ int loops_sorts() {
         if (slot1 < slot2) {
             smaller = slot1;
             larger = slot2;
+            cout << "The smaller value is: " << smaller
+                 << ".\nThe larger value is: " << larger
+                 << ".\n";
         }
-        else {
+        else if (slot1 > slot2){
             smaller = slot2;
             larger = slot1;
+            cout << "The smaller value is: " << smaller
+                 << ".\nThe larger value is: " << larger
+                 << ".\n";
         }
-
-        cout << "The smaller value is: " << smaller
-             << ".\nThe larger value is: " << larger
-             << ".\n";
-               
+        else if (slot1 == slot2)
+            cout << "The numbers are equal.\n";
+        else
+            cout << "Corner case\n";               
     
     }
     return 0;
