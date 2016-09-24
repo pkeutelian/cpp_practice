@@ -13,10 +13,15 @@ void loops_sorts() {
     cout << "Enter a set of numbers, '|' to end.: ";
 
     double slot1 = 0;
+    string units = "";
     double smaller = std::numeric_limits<double>::max();    // Start high enough to trigger.
     double larger = std::numeric_limits<double>::min();     // Start low enough to trigger.
 
-    while (cin >> slot1) {
+    const int m_to_cm = 100;
+    const double in_to_cm = 2.54;
+    const int ft_to_in = 12;
+
+    while (cin >> slot1 >> units) {
 
         cout << "Entered: " << slot1 << ".\n";
 
