@@ -4,14 +4,15 @@
 
 #include "std_lib_facilities.h"
 
-int loops_sorts() {
+
+void loops_sorts() {
 
     cout << "Enter a set of numbers, '|' to end.: ";
 
-    int slot1 = 0;
-    int slot2 = 0;
-    int smaller = 0;
-    int larger = 0;
+    double slot1 = 0;
+    double slot2 = 0;
+    double smaller = 0;
+    double larger = 0;
 
     while (cin >> slot1 >> slot2) {
 
@@ -37,6 +38,4 @@ int loops_sorts() {
             cout << "Corner case\n";               
     
     }
-    return 0;
-
 }
