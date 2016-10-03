@@ -9,13 +9,13 @@
 #include <cstddef>
 #include <iostream>
 
+const int m_to_cm = 100;
+const double in_to_cm = 2.54;
+const int ft_to_in = 12;
+
 double determine_conversion(string units_entered)
 {
-	constexpr int m_to_cm = 100;
-	constexpr double in_to_cm = 2.54;
-	constexpr int ft_to_in = 12;
 	double conversion_factor = 0.0;
-	
 	// switch to if-statements, no switch on string
 	if (units_entered == "m")
 		conversion_factor = 1.0;
@@ -32,7 +32,6 @@ double determine_conversion(string units_entered)
 
 void loops_sorts()
 {
-
 	cout << "Enter a set of numbers with units, 'm', 'cm', 'in', 'ft' "
 		<< " accepted. '|' to end.: ";
 
@@ -70,14 +69,14 @@ void loops_sorts()
 			smaller = slot1;
 			smaller_units = units_entered;
 			smaller_converted = 
-				smaller/determine_conversion(smaller_units);
+				smaller*determine_conversion(smaller_units);
 			cout << smaller << " " << smaller_units
 				<< ", the smallest so far.\n ";
 		} else if (temp > larger_converted) {
 			larger = slot1;
 			larger_units = units_entered;
 			larger_converted = 
-				larger/determine_conversion(larger_units);
+				larger*determine_conversion(larger_units);
 			cout << larger << " " << larger_units
 				<< ", the largest so far.\n ";
 		}
