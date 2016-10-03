@@ -73,14 +73,16 @@ void loops_sorts()
 			cout << "Invalid value.\n";
 			i--;
 			continue;
-		} else if (temp < smaller_converted) {
+		} 
+		if (temp < smaller_converted) {
 			smaller = slot1;
 			smaller_units = units_entered;
 			smaller_converted = 
 				smaller*determine_conversion(smaller_units);
 			cout << smaller << " " << smaller_units
 				<< ", the smallest so far.\n ";
-		} else if (temp > larger_converted) {
+		} 
+		if (temp > larger_converted) {
 			larger = slot1;
 			larger_units = units_entered;
 			larger_converted = 
