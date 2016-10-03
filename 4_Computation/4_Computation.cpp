@@ -20,7 +20,7 @@ double determine_conversion(string units_entered)
 	if (units_entered == "m")
 		conversion_factor = 1.0;
 	else if (units_entered == "cm")
-		conversion_factor = 1/m_to_cm;
+		conversion_factor = 1.0/m_to_cm;
 	else if (units_entered == "in")
 		conversion_factor = in_to_cm / m_to_cm;
 	else if (units_entered == "ft")
@@ -53,19 +53,27 @@ void loops_sorts()
 	double temp = 0.0;	// Placeholder for consistent units.
 	string temp_units = "m";
 
+	double sum = 0.0;
+	int i = 0;
 	while (cin >> slot1 >> units_entered) {
 
 		/* Standard sub checks for a unit, converts it to meters, then
 		 * compares that value with the stored max and min, then stores
 		 * the new value if it's bounding.
 		 */
-		 
-		cout << "Entered: " << slot1 << " " << units_entered << ".\n";
 		
+		cout << "Entered: " << slot1 << " " << units_entered 
+			<< ".\n";
+
 		conversion_factor = determine_conversion(units_entered);
 		temp = slot1 * conversion_factor;
-		
-		if (temp < smaller_converted) {
+		sum += temp;
+		i++;
+		if (conversion_factor == 0.0) {
+			cout << "Invalid value.\n";
+			i--;
+			continue;
+		} else if (temp < smaller_converted) {
 			smaller = slot1;
 			smaller_units = units_entered;
 			smaller_converted = 
@@ -79,6 +87,11 @@ void loops_sorts()
 				larger*determine_conversion(larger_units);
 			cout << larger << " " << larger_units
 				<< ", the largest so far.\n ";
+		} else {
+			;
 		}
 	}
+	cout << "Max: " << larger << " " << larger_units << ", Min: " << smaller
+		<< " " << smaller_units << ", Entered: " << i << " values. "
+		<< "Sum: " << sum << " " << temp_units << ".\n";
 }
