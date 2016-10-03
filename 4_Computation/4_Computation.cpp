@@ -54,7 +54,8 @@ void loops_sorts()
 	string temp_units = "m";
 
 	double sum = 0.0;
-	int i = 0;
+	int entry_count = 0;
+	vector<double> v;
 	while (cin >> slot1 >> units_entered) {
 
 		/* Standard sub checks for a unit, converts it to meters, then
@@ -68,10 +69,10 @@ void loops_sorts()
 		conversion_factor = determine_conversion(units_entered);
 		temp = slot1 * conversion_factor;
 		sum += temp;
-		i++;
+		entry_count++;
 		if (conversion_factor == 0.0) {
 			cout << "Invalid value.\n";
-			i--;
+			entry_count--;
 			continue;
 		} 
 		if (temp < smaller_converted) {
@@ -92,8 +93,13 @@ void loops_sorts()
 		} else {
 			;
 		}
+		v.push_back(temp);
 	}
 	cout << "Max: " << larger << " " << larger_units << ", Min: " << smaller
-		<< " " << smaller_units << ", Entered: " << i << " values. "
-		<< "Sum: " << sum << " " << temp_units << ".\n";
+		<< " " << smaller_units << ", Entered: " << entry_count
+		<< " values. " << "Sum: " << sum << " " << temp_units 
+		<< ".\nVector: ";
+	for (int i = 0; i<v.size(); ++i)
+		cout << v[i] << " ";
+	cout << "\n";
 }
